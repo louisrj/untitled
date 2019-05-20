@@ -1,0 +1,11 @@
+.idea/*
+*.iml
+*.log
+target/
+logs/
+
+### Eclipse ###
+.settings/
+.classpath
+.project
+.factorypath
