@@ -34,9 +34,9 @@ public class ValidateBinarySearchTree {
     ValidateBinarySearchTree validateBinarySearchTree = new ValidateBinarySearchTree();
     TreeNode root = new TreeNode(5);
     root.left = new TreeNode(1);
-    root.right = new TreeNode(4);
-    root.right.right = new TreeNode(6);
-    root.right.left = new TreeNode(3);
+    root.right = new TreeNode(6);
+    root.right.right = new TreeNode(7);
+    root.right.left = new TreeNode(4);
 
     System.out.println(validateBinarySearchTree.isValidBST(root));
 

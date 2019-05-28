@@ -21,7 +21,6 @@ import java.util.PriorityQueue;
 public class MeetingRoomsII {
 
   public static void main(String[] args) {
-
     int[][] intervals = {
         {0, 30},
         {5, 10},

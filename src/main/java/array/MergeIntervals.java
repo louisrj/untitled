@@ -44,13 +44,6 @@ public class MergeIntervals {
     Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
     List<int[]> ret = new ArrayList<>();
 
-    Comparator<Integer> comparator = new Comparator<Integer>() {
-
-      @Override
-      public int compare(Integer o1, Integer o2) {
-        return 0;
-      }
-    };
     int[] prev = null;
     //Input: [[1,3],[2,6],[8,10],[15,18]]
 
