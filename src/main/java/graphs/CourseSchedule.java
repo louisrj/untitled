@@ -7,7 +7,7 @@ public class CourseSchedule {
 
   public static void main(String[] args) {
     CourseSchedule schedule = new CourseSchedule();
-    System.out.println(schedule.canFinish(4, new int[][]{{1, 0}, {1, 2}, {1,3}, {2,3}}));
+    System.out.println(schedule.canFinish(4, new int[][]{{1, 0}, {1, 2}, {1, 3}, {2, 3}}));
   }
 
   private boolean canFinish(int numCourses, int[][] prerequisites) {

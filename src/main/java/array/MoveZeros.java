@@ -29,7 +29,7 @@ public class MoveZeros {
         nums[i] = nums[j];
         nums[j] = 0;
         i++;
-      } else if(nums[i] != 0) {
+      } else if (nums[i] != 0) {
         i++;
       }
 

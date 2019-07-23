@@ -7,7 +7,6 @@ import java.util.List;
  * LC118
  *
  * Given a non-negative integer numRows, generate the first numRows of Pascal's triangle.
- *
  */
 public class PascalTriangle {
 

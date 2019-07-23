@@ -1,7 +1,8 @@
 package array;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Given an array of integers, return indices of the two numbers such that they add up to a specific target.

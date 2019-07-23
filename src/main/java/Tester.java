@@ -15,7 +15,7 @@ public class Tester {
         {15, 18}
     };
 
-    Arrays.stream(tester.merge(intervals)).forEach( a -> {
+    Arrays.stream(tester.merge(intervals)).forEach(a -> {
       Arrays.stream(a).forEach(a1 -> {
         System.out.println(a1 + "\t");
       });

@@ -22,7 +22,8 @@ public class LowestCommonAncestorSecondApproach {
     root.left.right.right = new TreeNode(4);
 
     LowestCommonAncestorSecondApproach lowestCommonAncestorSecondApproach = new LowestCommonAncestorSecondApproach();
-    TreeNode treeNode = lowestCommonAncestorSecondApproach.lowestCommonAncestor(root, root.left.left, root.left.right.right);
+    TreeNode treeNode = lowestCommonAncestorSecondApproach.lowestCommonAncestor(root, root.left.left,
+        root.left.right.right);
     System.out.println(treeNode.val);
 
   }

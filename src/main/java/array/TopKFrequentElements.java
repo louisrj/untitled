@@ -1,6 +1,11 @@
 package array;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
 
 /**
  * Given a non-empty array of integers, return the k most frequent elements.
@@ -13,7 +18,6 @@ import java.util.*;
  *
  * Input: nums = [1], k = 1
  * Output: [1]
- *
  */
 public class TopKFrequentElements {
 

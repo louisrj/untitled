@@ -18,17 +18,17 @@ package array;
  * Example:
  *
  * Input: [
- *          [0,1,0],
- *          [0,0,1],
- *          [1,1,1],
- *          [0,0,0]
- *        ]
+ * [0,1,0],
+ * [0,0,1],
+ * [1,1,1],
+ * [0,0,0]
+ * ]
  * Output: [
- *            [0,0,0],
- *            [1,0,1],
- *            [0,1,1],
- *            [0,1,0]
- *         ]
+ * [0,0,0],
+ * [1,0,1],
+ * [0,1,1],
+ * [0,1,0]
+ * ]
  *
  * Follow up:
  *
@@ -40,17 +40,17 @@ package array;
 public class GameOfLife {
   public static void main(String[] args) {
     int[][] board = {
-        {0,1,0},
-        {0,0,1},
-        {1,1,1},
-        {0,0,0}
+        {0, 1, 0},
+        {0, 0, 1},
+        {1, 1, 1},
+        {0, 0, 0}
     };
 
     GameOfLife g = new GameOfLife();
     g.gameOfLife(board);
 
     for (int[] i : board) {
-      for(int j =0; j < board[0].length; j++) {
+      for (int j = 0; j < board[0].length; j++) {
         System.out.print(i[j] + "\t");
       }
       System.out.println();

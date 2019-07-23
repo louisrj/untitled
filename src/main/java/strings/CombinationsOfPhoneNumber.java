@@ -21,6 +21,7 @@ import java.util.Map;
 public class CombinationsOfPhoneNumber {
 
 
+  private static List<String> output = new ArrayList<>();
   private Map<String, String> phone = new HashMap<String, String>() {{
     put("2", "abc");
     put("3", "def");
@@ -31,8 +32,6 @@ public class CombinationsOfPhoneNumber {
     put("8", "tuv");
     put("9", "wxyz");
   }};
-
-  private static List<String> output = new ArrayList<>();
 
   public static void main(String[] args) {
 

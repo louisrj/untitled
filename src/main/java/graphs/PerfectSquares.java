@@ -19,7 +19,6 @@ import java.util.Set;
  * Input: n = 13
  * Output: 2
  * Explanation: 13 = 4 + 9.
- *
  */
 public class PerfectSquares {
   public static void main(String[] args) {

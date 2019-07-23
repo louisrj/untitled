@@ -1,6 +1,10 @@
 package array;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Question asked in discover ol
@@ -29,7 +33,6 @@ public class SortDates {
   private static List<String> sortDates(List<String> dates) {
 
 
-
     dates.sort(new Comparator<String>() {
       @Override
       public int compare(String o1, String o2) {
@@ -55,7 +58,7 @@ public class SortDates {
         Integer year2 = Integer.valueOf(yearString2);
         if (year1 < year2) {
           return -1;
-        } else if (year1 > year2){
+        } else if (year1 > year2) {
           return 1;
         } else {
           String m1 = s1[1];
@@ -89,7 +92,6 @@ public class SortDates {
     });
 
     return dates;
-
 
 
   }

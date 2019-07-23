@@ -5,10 +5,10 @@ package linkedlists;
  *
  * For example, the following two linked lists:
  *
- *     a1->a2
- *           \
- *            c1->c2->c3
- *           /
+ * a1->a2
+ * \
+ * c1->c2->c3
+ * /
  * b1->b2->b3
  *
  * begin to intersect at node c1.
@@ -16,11 +16,11 @@ package linkedlists;
  *
  *
  * Example 1:
- *       4->1
- *           \
- *            8->4->5
- *           /
- *    5->0->1
+ * 4->1
+ * \
+ * 8->4->5
+ * /
+ * 5->0->1
  *
  * Input: intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3
  * Output: Reference of the node with value = 8
@@ -28,11 +28,11 @@ package linkedlists;
  *
  *
  * Example 2:
- *    0->9->1
- *           \
- *            2->4
- *           /
- *          3
+ * 0->9->1
+ * \
+ * 2->4
+ * /
+ * 3
  *
  * Input: intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1
  * Output: Reference of the node with value = 2
@@ -40,9 +40,9 @@ package linkedlists;
  *
  *
  * Example 3:
- *     2->6->4
+ * 2->6->4
  *
- *        1->5
+ * 1->5
  *
  * Input: intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2
  * Output: null
@@ -56,7 +56,6 @@ package linkedlists;
  * The linked lists must retain their original structure after the function returns.
  * You may assume there are no cycles anywhere in the entire linked structure.
  * Your code should preferably run in O(n) time and use only O(1) memory.
- *
  */
 
 public class IntersectionOfTwoLinkedLists {
@@ -80,16 +79,16 @@ public class IntersectionOfTwoLinkedLists {
   private static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 
     //boundary check
-    if(headA == null || headB == null) return null;
+    if (headA == null || headB == null) return null;
 
     ListNode a = headA;
     ListNode b = headB;
 
     //if a & b have different len, then we will stop the loop after second iteration
-    while( a != b){
+    while (a != b) {
       //for the end of first iteration, we just reset the pointer to the head of another linkedlist
-      a = a == null? headB : a.next;
-      b = b == null? headA : b.next;
+      a = a == null ? headB : a.next;
+      b = b == null ? headA : b.next;
     }
 
     return a;

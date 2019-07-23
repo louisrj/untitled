@@ -27,7 +27,7 @@ import java.util.Stack;
  * Input: ["10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"]
  * Output: 22
  * Explanation:
- *   ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
+ * ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
  * = ((10 * (6 / (12 * -11))) + 17) + 5
  * = ((10 * (6 / -132)) + 17) + 5
  * = ((10 * 0) + 17) + 5
@@ -38,7 +38,8 @@ import java.util.Stack;
 public class ReversePolishNotation {
   public static void main(String[] args) {
     ReversePolishNotation reversePolishNotation = new ReversePolishNotation();
-    System.out.println(reversePolishNotation.evalRPN(new String[]{"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"}));
+    System.out.println(reversePolishNotation.evalRPN(
+        new String[]{"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"}));
   }
 
   private int evalRPN(String[] tokens) {

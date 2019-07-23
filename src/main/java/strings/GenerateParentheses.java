@@ -9,11 +9,11 @@ import java.util.List;
  * For example, given n = 3, a solution set is:
  *
  * [
- *   "((()))",
- *   "(()())",
- *   "(())()",
- *   "()(())",
- *   "()()()"
+ * "((()))",
+ * "(()())",
+ * "(())()",
+ * "()(())",
+ * "()()()"
  * ]
  */
 public class GenerateParentheses {

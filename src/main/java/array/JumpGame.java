@@ -29,7 +29,7 @@ public class JumpGame {
   }
 
   private boolean canJumpHelper(int pos, int[] nums) {
-    if(pos == nums.length - 1) return true;
+    if (pos == nums.length - 1) return true;
 
     int furthestPosition = Math.min(pos + nums[pos], nums.length - 1);
 

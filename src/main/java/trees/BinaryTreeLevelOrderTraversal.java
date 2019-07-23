@@ -1,22 +1,25 @@
 package trees;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 /**
  * Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
  *
  * For example:
  * Given binary tree [3,9,20,null,null,15,7],
- *     3
- *    / \
- *   9  20
- *     /  \
- *    15   7
+ * 3
+ * / \
+ * 9  20
+ * /  \
+ * 15   7
  * return its level order traversal as:
  * [
- *   [3],
- *   [9,20],
- *   [15,7]
+ * [3],
+ * [9,20],
+ * [15,7]
  * ]
  */
 public class BinaryTreeLevelOrderTraversal {
@@ -69,13 +72,13 @@ public class BinaryTreeLevelOrderTraversal {
     Queue<TreeNode> queue = new LinkedList<>();
     queue.add(root);
     int level = 0;
-    while ( !queue.isEmpty() ) {
+    while (!queue.isEmpty()) {
       // start the current level
       levels.add(new ArrayList<>());
 
       // number of elements in the current level
       int level_length = queue.size();
-      for(int i = 0; i < level_length; ++i) {
+      for (int i = 0; i < level_length; ++i) {
         TreeNode node = queue.remove();
 
         // fulfill the current level

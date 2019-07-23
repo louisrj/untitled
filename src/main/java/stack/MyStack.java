@@ -11,14 +11,16 @@ public class MyStack {
     size = 0;
   }
 
-  private static class Node {
-    int val;
-    Node next;
-
-    Node(int val) {
-      this.val = val;
-      this.next = null;
-    }
+  public static void main(String[] args) {
+    MyStack stack = new MyStack();
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+    stack.push(4);
+    stack.print();
+    int pop = stack.pop();
+    System.out.println("Deleted item : " + pop);
+    stack.print();
   }
 
   public boolean isEmpty() {
@@ -30,15 +32,15 @@ public class MyStack {
   }
 
   private void push(int val) {
-      Node node = new Node(val);
-      Node oldFirst = first;
-      first = node;
-      first.next = oldFirst;
-      size++;
+    Node node = new Node(val);
+    Node oldFirst = first;
+    first = node;
+    first.next = oldFirst;
+    size++;
   }
 
   private int pop() {
-    if(isEmpty()) throw new NoSuchElementException("Empty stack");
+    if (isEmpty()) throw new NoSuchElementException("Empty stack");
 
     int val = first.val;
     first = first.next;
@@ -54,16 +56,14 @@ public class MyStack {
     }
   }
 
-  public static void main(String[] args) {
-    MyStack stack = new MyStack();
-    stack.push(1);
-    stack.push(2);
-    stack.push(3);
-    stack.push(4);
-    stack.print();
-    int pop = stack.pop();
-    System.out.println("Deleted item : " + pop);
-    stack.print();
+  private static class Node {
+    int val;
+    Node next;
+
+    Node(int val) {
+      this.val = val;
+      this.next = null;
+    }
   }
 
 }

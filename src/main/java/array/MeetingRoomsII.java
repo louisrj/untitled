@@ -34,7 +34,7 @@ public class MeetingRoomsII {
 
   private int minMeetingRooms(int[][] intervals) {
 
-    if(intervals == null || intervals.length == 0) {
+    if (intervals == null || intervals.length == 0) {
       return 0;
     }
 
@@ -50,8 +50,8 @@ public class MeetingRoomsII {
 
     q.add(intervals[0][1]);
 
-    for(int i = 1; i < intervals.length; i++) {
-      if(q.peek() <= intervals[i][0]) {
+    for (int i = 1; i < intervals.length; i++) {
+      if (q.peek() <= intervals[i][0]) {
         q.poll();
       }
       q.add(intervals[i][1]);
