@@ -43,6 +43,7 @@ public class SortedArrayToBinarySearchTree {
     if (low > high) { // Done
       return null;
     }
+
     int mid = (low + high) / 2;
     TreeNode node = new TreeNode(num[mid]);
     node.left = helper(num, low, mid - 1);
