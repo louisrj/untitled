@@ -12,34 +12,24 @@ import java.util.Queue;
 import java.util.Set;
 
 /**
- * Given two words (beginWord and endWord), and a dictionary's word list, find the length of shortest transformation sequence from beginWord to endWord, such that:
+ * Given two words (beginWord and endWord), and a dictionary's word list, find the length of shortest transformation
+ * sequence from beginWord to endWord, such that:
  *
- * Only one letter can be changed at a time.
- * Each transformed word must exist in the word list. Note that beginWord is not a transformed word.
- * Note:
+ * Only one letter can be changed at a time. Each transformed word must exist in the word list. Note that beginWord is
+ * not a transformed word. Note:
  *
- * Return 0 if there is no such transformation sequence.
- * All words have the same length.
- * All words contain only lowercase alphabetic characters.
- * You may assume no duplicates in the word list.
- * You may assume beginWord and endWord are non-empty and are not the same.
- * Example 1:
+ * Return 0 if there is no such transformation sequence. All words have the same length. All words contain only
+ * lowercase alphabetic characters. You may assume no duplicates in the word list. You may assume beginWord and endWord
+ * are non-empty and are not the same. Example 1:
  *
- * Input:
- * beginWord = "hit",
- * endWord = "cog",
- * wordList = ["hot","dot","dog","lot","log","cog"]
+ * Input: beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log","cog"]
  *
  * Output: 5
  *
- * Explanation: As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",
- * return its length 5.
+ * Explanation: As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog", return its length 5.
  * Example 2:
  *
- * Input:
- * beginWord = "hit"
- * endWord = "cog"
- * wordList = ["hot","dot","dog","lot","log"]
+ * Input: beginWord = "hit" endWord = "cog" wordList = ["hot","dot","dog","lot","log"]
  *
  * Output: 0
  *
@@ -49,8 +39,40 @@ public class WordLadder {
   public static void main(String[] args) {
     WordLadder wordLadder = new WordLadder();
     List<String> wordList = Arrays.asList("hot", "dot", "dog", "lot", "log", "cog");
-//    System.out.println(wordLadder.ladderLength("hit", "cog", wordList));
+    //System.out.println(wordLadder.ladderLength("hit", "cog", wordList));
     System.out.println(wordLadder.ladderLength1("hit", "cog", wordList));
+  }
+
+  private int ladderLength1(String beginWord, String endWord, List<String> wordList) {
+    if (!wordList.contains(endWord))
+      return 0;
+    Queue<String> queue = new LinkedList<>();
+    queue.add(beginWord);
+    HashSet<String> wordSet = new HashSet<>(wordList);
+    HashSet<String> visited = new HashSet<>();
+    visited.add(beginWord);
+    int level = 1;
+    while (!queue.isEmpty()) {
+      int size = queue.size();
+      for (int k = 0; k < size; k++) {
+        String s = queue.poll();
+        for (int i = 0; i < s.length(); i++) {
+          char[] chars = s.toCharArray();
+          for (char c = 'a'; c <= 'z'; c++) {
+            chars[i] = c;
+            String word = new String(chars);
+            if (word.equals(endWord))
+              return level + 1;
+            if (wordSet.contains(word) && !visited.contains(word)) {
+              queue.add(word);
+              visited.add(word);
+            }
+          }
+        }
+      }
+      level++;
+    }
+    return 0;
   }
 
   private int ladderLength(String beginWord, String endWord, List<String> wordList) {
@@ -107,38 +129,6 @@ public class WordLadder {
       }
     }
 
-    return 0;
-  }
-
-  public int ladderLength1 (String beginWord, String endWord, List<String> wordList) {
-    if (!wordList.contains(endWord))
-      return 0;
-    Queue<String> queue = new LinkedList<>();
-    queue.add(beginWord);
-    HashSet<String> dict = new HashSet<>(wordList);
-    HashSet<String> visited = new HashSet<>();
-    visited.add(beginWord);
-    int level = 1;
-    while (!queue.isEmpty()) {
-      int size = queue.size();
-      for (int k = 0; k < size; k++) {
-        String s = queue.poll();
-        for (int i = 0; i < s.length(); i++) {
-          char[] chars = s.toCharArray();
-          for (char c = 'a'; c <= 'z'; c++) {
-            chars[i] = c;
-            String word = new String(chars);
-            if (word.equals(endWord))
-              return level + 1;
-            if (dict.contains(word) && !visited.contains(word)) {
-              queue.add(word);
-              visited.add(word);
-            }
-          }
-        }
-      }
-      level++;
-    } // while
     return 0;
   }
 }

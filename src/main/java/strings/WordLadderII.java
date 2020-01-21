@@ -26,10 +26,10 @@ import java.util.*;
 public class WordLadderII {
   public static void main(String[] args) {
     WordLadderII wordLadderII = new WordLadderII();
-    System.out.println(wordLadderII.findLadders("hit", "cog", Arrays.asList("hot","dot","dog","lot","log","cog")));
+    System.out.println(wordLadderII.findLadders("hit", "cog", Arrays.asList("hot", "dot", "dog", "lot", "log", "cog")));
   }
 
-  public List<List<String>> findLadders(String start, String end, List<String> wordList) {
+  private List<List<String>> findLadders(String start, String end, List<String> wordList) {
     HashSet<String> dict = new HashSet<>(wordList);
     List<List<String>> res = new ArrayList<>();
     HashMap<String, ArrayList<String>> nodeNeighbors = new HashMap<>();// Neighbors for every node
