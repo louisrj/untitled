@@ -4,15 +4,10 @@ import java.util.*;
 
 public class RottingOranges {
   public static void main(String[] args) {
-//    int[][] grid = {
-//        {2, 1, 1},
-//        {1, 1, 0},
-//        {0, 1, 1}
-//    };
-    List<Integer> row1 = Arrays.asList(0,1,1,0,1);
-    List<Integer> row2 = Arrays.asList(0,1,0,1,0);
-    List<Integer> row3 = Arrays.asList(0,0,0,0,1);
-    List<Integer> row4 = Arrays.asList(0,1,0,0,0);
+    List<Integer> row1 = Arrays.asList(0, 1, 1, 0, 1);
+    List<Integer> row2 = Arrays.asList(0, 1, 0, 1, 0);
+    List<Integer> row3 = Arrays.asList(0, 0, 0, 0, 1);
+    List<Integer> row4 = Arrays.asList(0, 1, 0, 0, 0);
     List<List<Integer>> grid = new ArrayList<>();
     grid.add(row1);
     grid.add(row2);
@@ -30,8 +25,8 @@ public class RottingOranges {
     Map<Integer, Integer> depth = new HashMap<>();
     int[][] grid = new int[rows][columns];
 
-    for ( int i = 0; i < rows; i++) {
-      for (int j =0; j < columns; j++) {
+    for (int i = 0; i < rows; i++) {
+      for (int j = 0; j < columns; j++) {
         grid[i][j] = grids.get(i).get(j);
       }
     }

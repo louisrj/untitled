@@ -30,21 +30,21 @@ public class WordLadderII {
   }
 
   private List<List<String>> findLadders(String start, String end, List<String> wordList) {
-    HashSet<String> dict = new HashSet<>(wordList);
+    Set<String> wordSet = new HashSet<>(wordList);
     List<List<String>> res = new ArrayList<>();
     HashMap<String, ArrayList<String>> nodeNeighbors = new HashMap<>();// Neighbors for every node
     HashMap<String, Integer> distance = new HashMap<>();// Distance of every node from the start node
     ArrayList<String> solution = new ArrayList<>();
 
-    dict.add(start);
-    bfs(start, end, dict, nodeNeighbors, distance);
+    wordSet.add(start);
+    bfs(start, end, wordSet, nodeNeighbors, distance);
     dfs(start, end, nodeNeighbors, distance, solution, res);
     return res;
   }
 
   // BFS: Trace every node's distance from the start node (level by level).
-  private void bfs(String start, String end, Set<String> dict, HashMap<String, ArrayList<String>> nodeNeighbors, HashMap<String, Integer> distance) {
-    for (String str : dict)
+  private void bfs(String start, String end, Set<String> wordSet, HashMap<String, ArrayList<String>> nodeNeighbors, HashMap<String, Integer> distance) {
+    for (String str : wordSet)
       nodeNeighbors.put(str, new ArrayList<>());
 
     Queue<String> queue = new LinkedList<>();
@@ -52,12 +52,12 @@ public class WordLadderII {
     distance.put(start, 0);
 
     while (!queue.isEmpty()) {
-      int count = queue.size();
+      int size = queue.size();
       boolean foundEnd = false;
-      for (int i = 0; i < count; i++) {
+      for (int i = 0; i < size; i++) {
         String cur = queue.poll();
         int curDistance = distance.get(cur);
-        ArrayList<String> neighbors = getNeighbors(cur, dict);
+        ArrayList<String> neighbors = getNeighbors(cur, wordSet);
 
         for (String neighbor : neighbors) {
           nodeNeighbors.get(cur).add(neighbor);
@@ -77,7 +77,7 @@ public class WordLadderII {
   }
 
   // Find all next level nodes.
-  private ArrayList<String> getNeighbors(String node, Set<String> dict) {
+  private ArrayList<String> getNeighbors(String node, Set<String> wordSet) {
     ArrayList<String> res = new ArrayList<>();
     char chs[] = node.toCharArray();
 
@@ -86,7 +86,7 @@ public class WordLadderII {
         if (chs[i] == ch) continue;
         char old_ch = chs[i];
         chs[i] = ch;
-        if (dict.contains(String.valueOf(chs))) {
+        if (wordSet.contains(String.valueOf(chs))) {
           res.add(String.valueOf(chs));
         }
         chs[i] = old_ch;
