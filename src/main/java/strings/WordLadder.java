@@ -48,8 +48,8 @@ public class WordLadder {
       return 0;
     Queue<String> queue = new LinkedList<>();
     queue.add(beginWord);
-    HashSet<String> wordSet = new HashSet<>(wordList);
-    HashSet<String> visited = new HashSet<>();
+    Set<String> wordSet = new HashSet<>(wordList);
+    Set<String> visited = new HashSet<>();
     visited.add(beginWord);
     int level = 1;
     while (!queue.isEmpty()) {

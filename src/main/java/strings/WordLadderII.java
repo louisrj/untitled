@@ -77,23 +77,23 @@ public class WordLadderII {
   }
 
   // Find all next level nodes.
-  private ArrayList<String> getNeighbors(String node, Set<String> wordSet) {
-    ArrayList<String> res = new ArrayList<>();
-    char chs[] = node.toCharArray();
+  private ArrayList<String> getNeighbors(String word, Set<String> wordSet) {
+    ArrayList<String> neighbors = new ArrayList<>();
+    char[] wordArray = word.toCharArray();
 
     for (char ch = 'a'; ch <= 'z'; ch++) {
-      for (int i = 0; i < chs.length; i++) {
-        if (chs[i] == ch) continue;
-        char old_ch = chs[i];
-        chs[i] = ch;
-        if (wordSet.contains(String.valueOf(chs))) {
-          res.add(String.valueOf(chs));
+      for (int i = 0; i < wordArray.length; i++) {
+        if (wordArray[i] == ch) continue;
+        char old_ch = wordArray[i];
+        wordArray[i] = ch;
+        if (wordSet.contains(String.valueOf(wordArray))) {
+          neighbors.add(String.valueOf(wordArray));
         }
-        chs[i] = old_ch;
+        wordArray[i] = old_ch;
       }
 
     }
-    return res;
+    return neighbors;
   }
 
   // DFS: output all paths with the shortest distance.
