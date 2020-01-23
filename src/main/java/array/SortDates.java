@@ -50,7 +50,7 @@ public class SortDates {
         map.put("Oct", 10);
         map.put("Nov", 11);
         map.put("Dec", 12);
-        String[] s1 = o1.split(" ");
+        String[] s1 = o1.split(" ", 2);
         String[] s2 = o2.split(" ");
         String yearString1 = s1[2];
         String yearString2 = s2[2];
