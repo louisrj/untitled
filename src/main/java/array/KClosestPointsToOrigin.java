@@ -1,7 +1,5 @@
 package array;
 
-import strings.IntegerToEnglishWords;
-
 import java.util.*;
 
 public class KClosestPointsToOrigin {
