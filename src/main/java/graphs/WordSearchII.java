@@ -88,5 +88,4 @@ public class WordSearchII {
     TrieNode[] next = new TrieNode[26];
     String word;
   }
-
 }
