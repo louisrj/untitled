@@ -1,5 +1,8 @@
 package strings;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Stack;
 
 /**
@@ -25,6 +28,8 @@ public class BasicCalculatorII {
   }
 
   private int calculate(String s) {
+    String[] sa = new String[]{"a"};
+    Set<String> sett = new HashSet<String>(Arrays.asList(sa));
     int len;
     if (s == null || (len = s.length()) == 0) return 0;
     Stack<Integer> stack = new Stack<>();
