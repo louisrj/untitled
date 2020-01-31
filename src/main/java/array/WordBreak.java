@@ -51,7 +51,7 @@ public class WordBreak {
     return false;
   }
 
-  public boolean wordBreakDP(String s, List<String> wordDict) {
+  private boolean wordBreakDP(String s, List<String> wordDict) {
     Set<String> wordDictSet=new HashSet<>(wordDict);
     boolean[] dp = new boolean[s.length() + 1];
     dp[0] = true;
