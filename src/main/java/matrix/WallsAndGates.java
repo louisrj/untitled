@@ -42,6 +42,7 @@ public class WallsAndGates {
       for (int value : a) {
         System.out.print(value);
         System.out.print(" ");
+
       }
       System.out.println();
     }
