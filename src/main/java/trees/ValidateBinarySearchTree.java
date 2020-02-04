@@ -11,7 +11,7 @@ package trees;
  * Example 1:
  *
  * Input:
- * 2
+ *
  * / \
  * 1   3
  * Output: true
