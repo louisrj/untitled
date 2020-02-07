@@ -64,10 +64,8 @@ public class ReconstructItinerary {
       flights.get(ticket.get(0)).add(ticket.get(1));
 
     });
+
     dfs("JFK");
-
-    Stack<Character> stack = new Stack<>();
-
 
     return path;
   }
