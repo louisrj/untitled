@@ -52,21 +52,21 @@ public class PrimePalindrome {
     return -1;
   }
 
-  private int nextPalin(String n) {
-    int l = n.length();
+  private int nextPalin(String str) {
+    int strLen = str.length();
     List<Integer> cands = new LinkedList<>();
-    int half = Integer.valueOf(n.substring(0, (l + 1) / 2));
+    int halfNum = Integer.valueOf(str.substring(0, (strLen + 1) / 2));
 
-    for (int i = half; i <= half + 1; i++) {
+    for (int i = halfNum; i <= halfNum + 1; i++) {
       String halfString = "" + i;
-      if (l % 2 == 1) {
+      if (strLen % 2 == 1) {
         halfString = halfString.substring(0, halfString.length() - 1);
       }
       String newString = "" + i + new StringBuilder(halfString).reverse().toString();
       cands.add(Integer.valueOf(newString));
     }
 
-    int ori = Integer.valueOf(n), result = Integer.MAX_VALUE;
+    int ori = Integer.valueOf(str), result = Integer.MAX_VALUE;
     for (int cand : cands) {
       if (cand >= ori && cand < result) {
         result = cand;
@@ -87,6 +87,4 @@ public class PrimePalindrome {
     }
     return true;
   }
-
-
 }
