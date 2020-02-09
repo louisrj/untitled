@@ -27,8 +27,8 @@ import java.util.Set;
 public class WordBreak {
   public static void main(String[] args) {
     WordBreak wordBreak = new WordBreak();
-//    System.out.println(wordBreak.wordBreak("cars", Arrays.asList("car", "ca", "rs")));
-    System.out.println(wordBreak.wordBreakDP("cars", Arrays.asList("car", "ca", "rs")));
+    System.out.println(wordBreak.wordBreak("cars", Arrays.asList("car", "ca", "rs")));
+//    System.out.println(wordBreak.wordBreakDP("cars", Arrays.asList("car", "ca", "rs")));
   }
 
   private boolean wordBreak(String s, List<String> wordDict) {

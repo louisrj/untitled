@@ -29,7 +29,7 @@ public class LongestConsecutiveSubstringLessThanThree {
 
   public static void main(String[] args) {
     LongestConsecutiveSubstringLessThanThree l = new LongestConsecutiveSubstringLessThanThree();
-    System.out.println(l.lengthOfSubstring("abaaa"));
+    System.out.println(l.lengthOfSubstring("baaabbabbb"));
   }
 
   private int lengthOfSubstring(String s) {
