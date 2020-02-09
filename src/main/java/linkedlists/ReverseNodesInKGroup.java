@@ -18,24 +18,34 @@ public class ReverseNodesInKGroup {
   }
 
   private ListNode reverseKGroup(ListNode head, int k) {
-    ListNode curr = head;
+    ListNode current = head;
+    ListNode next = null;
+    ListNode prev = null;
+
     int count = 0;
-    while (curr != null && count != k) { // find the k+1 node
-      curr = curr.next;
+    ListNode counter = head;
+    while (count < k) {
+      if (counter == null) return head;
+      counter = counter.next;
       count++;
     }
-    if (count == k) { // if k+1 node is found
-      curr = reverseKGroup(curr, k); // reverse list with k+1 node as head
-      // head - head-pointer to direct part,
-      // curr - head-pointer to reversed part;
-      while (count-- > 0) { // reverse current k-group:
-        ListNode tmp = head.next; // tmp - next head in direct part
-        head.next = curr; // preappending "direct" head to the reversed list
-        curr = head; // move head of reversed part to a new node
-        head = tmp; // move "direct" head to the next node in direct part
-      }
-      head = curr;
+
+    /* Reverse first k nodes of linked list */
+    while (count > 0 && current != null) {
+      next = current.next;
+      current.next = prev;
+      prev = current;
+      current = next;
+      count--;
     }
-    return head;
+
+    /* next is now a pointer to (k+1)th node
+    Recursively call for the list starting from current.
+    And make rest of the list as next of first node */
+    if (next != null)
+      head.next = reverseKGroup(next, k);
+
+    // prev is now head of input list
+    return prev;
   }
 }
