@@ -15,14 +15,27 @@ public class InOrderSuccessorInBST {
   }
 
   private TreeNode successor(TreeNode root, TreeNode p) {
-    if (root == null)
-      return null;
-
-    if (root.val <= p.val) {
-      return successor(root.right, p);
-    } else {
-      TreeNode left = successor(root.left, p);
-      return (left != null) ? left : root;
+    if (p.right != null) {
+      return minValue(p.right);
     }
+
+    TreeNode successor = null;
+    while (root != null) {
+      if (root.val > p.val) {
+        successor = root;
+        root = root.left;
+      } else if (root.val < p.val) {
+        root = root.right;
+      } else break;
+    }
+    return successor;
+  }
+
+  private TreeNode minValue(TreeNode p) {
+    while (p.left != null) {
+      p = p.left;
+    }
+
+    return p;
   }
 }
