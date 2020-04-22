@@ -68,7 +68,6 @@ public class MergeKSortedLists {
     int interval = 1;
 
     while (interval < lists.length) {
-      System.out.println(lists.length);
       for (int i = 0; i + interval < lists.length; i = i + interval * 2) {
         lists[i] = mergeTwoLists(lists[i], lists[i + interval]);
       }
