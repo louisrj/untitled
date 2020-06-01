@@ -1,7 +1,9 @@
 package matrix;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
@@ -45,6 +47,24 @@ public class EmployeePath {
         prev = cur;
     }
     return prev == dest || distance(prev, dest) <= range;
+  }
+
+  private boolean isReachableBfs(Point source, Point dest, List<Point> stops, int range) {
+    Queue<Point> q = new LinkedList<>();
+    q.offer(source);
+
+    while(!q.isEmpty()) {
+      Point cur = q.poll();
+      if (cur == dest || distance(cur, dest) <= range)
+        return true;
+      for (Point stop : stops) {
+        if (!stop.visited && distance(cur, stop) <= range) {
+          stop.visited = true;
+          q.add(stop);
+        }
+      }
+    }
+    return false;
   }
 
   private double distance(Point cur, Point stop) {

@@ -1,10 +1,10 @@
 package trees;
 
-public class LowestCommonAncestorSecondApproach {
+public class LowestCommonAncestorBinaryTree {
 
   private TreeNode ans;
 
-  public LowestCommonAncestorSecondApproach() {
+  public LowestCommonAncestorBinaryTree() {
     // Variable to store LCA node.
     this.ans = null;
   }
@@ -21,7 +21,7 @@ public class LowestCommonAncestorSecondApproach {
     root.left.right.left = new TreeNode(7);
     root.left.right.right = new TreeNode(4);
 
-    LowestCommonAncestorSecondApproach lowestCommonAncestorSecondApproach = new LowestCommonAncestorSecondApproach();
+    LowestCommonAncestorBinaryTree lowestCommonAncestorSecondApproach = new LowestCommonAncestorBinaryTree();
     TreeNode treeNode = lowestCommonAncestorSecondApproach.lowestCommonAncestor(root, root.left.left,
         root.left.right.right);
     System.out.println(treeNode.val);
