@@ -66,7 +66,11 @@ public class MostCommonWord {
     for (String s : map.keySet()) {
       p.offer(s);
     }
+    Character c = 'a';
+
+
     String key = Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
+    Arrays.copyOf(new int[] {1}, 1);
     return p.poll();
   }
 }

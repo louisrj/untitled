@@ -2,6 +2,7 @@ package array;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Given an array of integers and an integer k, you need to find the number of unique k-diff pairs in the array.

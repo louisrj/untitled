@@ -32,7 +32,6 @@ public class Subsets {
 
   private void toFindAllSubsets(int[] nums, List<List<Integer>> results, List<Integer> subset, int startIndex) {
     results.add(new ArrayList<>(subset));
-
     for (int i = startIndex; i < nums.length; i++) {
       subset.add(nums[i]);
       toFindAllSubsets(nums, results, subset, i + 1);
