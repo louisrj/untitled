@@ -44,7 +44,8 @@ public class Atoi {
 
   private int myAtoi(String str) {
     if (str == null || str.length() == 0)
-      return 0;//
+      return 0;
+    str.split(":", -1);
     str = str.trim();
     char firstChar = str.charAt(0);
     int sign = 1, start = 0, len = str.length();
