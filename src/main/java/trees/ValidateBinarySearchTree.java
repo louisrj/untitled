@@ -31,28 +31,36 @@ public class ValidateBinarySearchTree {
   public static void main(String[] args) {
 
     ValidateBinarySearchTree validateBinarySearchTree = new ValidateBinarySearchTree();
-    TreeNode root = new TreeNode(5);
+//    TreeNode root = new TreeNode(5);
+//    root.left = new TreeNode(1);
+//    root.right = new TreeNode(6);
+//    root.right.right = new TreeNode(7);
+//    root.right.left = new TreeNode(4);
+
+    TreeNode root = new TreeNode(2);
     root.left = new TreeNode(1);
-    root.right = new TreeNode(6);
-    root.right.right = new TreeNode(7);
-    root.right.left = new TreeNode(4);
+    root.right = new TreeNode(3);
 
     System.out.println(validateBinarySearchTree.isValidBST(root));
 
   }
 
   private boolean isBSTHelper(TreeNode node, Integer lower_limit, Integer upper_limit) {
+    if (node == null) return true;
+
     if ((lower_limit != null) && (node.val <= lower_limit))
       return false;
     if ((upper_limit != null) && (upper_limit <= node.val))
       return false;
 
-    boolean left = node.left == null || isBSTHelper(node.left, lower_limit, node.val);
-    if (left) {
-      boolean right = node.right == null || isBSTHelper(node.right, node.val, upper_limit);
-      return right;
-    } else
-      return false;
+    return isBSTHelper(node.left, lower_limit, node.val) && isBSTHelper(node.right, node.val, upper_limit);
+
+//    boolean left = node.left == null || isBSTHelper(node.left, lower_limit, node.val);
+//    if (left) {
+//      boolean right = node.right == null || isBSTHelper(node.right, node.val, upper_limit);
+//      return right;
+//    } else
+//      return false;
   }
 
   private boolean isValidBST(TreeNode root) {
